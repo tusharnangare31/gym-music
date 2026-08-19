@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", Arial, Helvetica, sans-serif;
+  --font-hindi: "Tiro Devanagari Hindi", Georgia, serif;
+  --font-kalam: "Kalam", cursive;
+
+  --color-cream: #fff8e7;
+  --color-amber: #e7a72e;
+  --color-background: #130b07;
+  --color-brand-red: #9e2919;
+  --color-brand-orange: #e56f08;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background-color: var(--color-background);
+  }
+
+  body {
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+  }
+}
+
+/* ─── Hero Title ─── */
+.hero-title {
+  font-family: var(--font-hindi);
+  font-size: clamp(80px, 11vw, 160px);
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+  font-weight: 700;
+  text-shadow:
+    2px 3px 0 #6d1f10,
+    5px 7px 0 rgba(0, 0, 0, 0.28);
+}
+
+/* ─── Spinning disc ─── */
+@keyframes disc-spin {
+  to { transform: rotate(360deg); }
+}
+.spin-disc {
+  animation: disc-spin 4.8s linear infinite;
+}
+
+/* ─── Quote fade-in ─── */
+@keyframes quote-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.quote-animate {
+  animation: quote-in 0.5s ease both;
+}
+
+/* ─── Skeleton shimmer ─── */
+@keyframes skeleton-shine {
+  to { transform: translateX(100%); }
+}
+.skeleton-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 15%, rgba(255, 255, 255, 0.12) 45%, transparent 75%);
+  transform: translateX(-100%);
+  animation: skeleton-shine 1.2s infinite;
+}
+
+/* ─── Scrollbar ─── */
+.playlist-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #8e5934 transparent;
+}
+.playlist-scroll::-webkit-scrollbar { width: 6px; }
+.playlist-scroll::-webkit-scrollbar-track { background: transparent; }
+.playlist-scroll::-webkit-scrollbar-thumb { background: #8e5934; border-radius: 3px; }
