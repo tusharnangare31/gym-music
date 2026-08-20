@@ -81,7 +81,7 @@ interface MusicContextType {
 }
 
 // YouTube playlist ID extracted from the user's link
-const PLAYLIST_ID = 'PLNL7ZqTaqgMIHLmrZpfiR_CAGhK_TgYBS';
+const PLAYLIST_ID = 'PLVm5_C02i2jw';
 
 const MusicContext = createContext<MusicContextType | undefined>(undefined);
 

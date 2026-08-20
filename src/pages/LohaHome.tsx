@@ -117,7 +117,7 @@ const LohaHome = () => {
         </div>
         {/* YT Music link */}
         <a
-          href="https://youtube.com/playlist?list=PLNL7ZqTaqgMIHLmrZpfiR_CAGhK_TgYBS"
+          href="https://music.youtube.com/playlist?list=PLVm5_C02i2jw"
           target="_blank" rel="noreferrer"
           className="hidden sm:inline-flex h-[34px] border border-white/[.19] bg-[rgba(15,9,7,.65)] backdrop-blur-[12px] rounded-full items-center gap-[7px] px-[13px] text-[#f8f3e9] text-[12px] font-extrabold no-underline shadow-[0_7px_28px_rgba(0,0,0,.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[rgba(48,28,21,.9)]"
         >
