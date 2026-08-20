@@ -148,14 +148,12 @@ export const MusicProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }));
     setQueue(initialQueue);
 
-    // Fetch real titles in the background via oembed
+    // Fetch real titles in the background via noembed
     const updatedQueue = [...initialQueue];
     await Promise.allSettled(
       ids.map(async (videoId, index) => {
         try {
-          const resp = await fetch(
-            `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${videoId}`)}&format=json`
-          );
+          const resp = await fetch(`https://noembed.com/embed?url=https://www.youtube.com/watch?v=${videoId}`);
           if (resp.ok) {
             const data = await resp.json();
             updatedQueue[index] = {
@@ -196,6 +194,7 @@ export const MusicProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           list: PLAYLIST_ID,
           playsinline: 1,
           rel: 0,
+          origin: 'https://lohekajigra.vercel.app'
         },
         events: {
           onReady: (event) => {
